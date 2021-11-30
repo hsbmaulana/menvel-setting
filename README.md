@@ -21,6 +21,20 @@ How to use it :
 $ php artisan migrate
 ```
 
+- Sample usage.
+
+```php
+use Menvel\Setting\Contracts\Repository\ISettingRepository;
+
+$repository = app(ISettingRepository::class);
+// $repository->setUser(...); //
+// $repository->getUser(); //
+
+// $repository->setup('key', 'value'); //
+// $repository->setdown('...'); //
+// $repository->all(); //
+```
+
 Author
 ---
 
