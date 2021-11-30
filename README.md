@@ -13,17 +13,13 @@ $ composer require hsbmaulana/menvel-setting
 
 How to use it :
 
-- Publish files.
+- Put `Menvel\Setting\SettingServiceProvider` to service provider configuration list.
 
-```
-$ php artisan vendor:publish --provider="Menvel\Setting\SettingServiceProvider"
-```
+- Migrate.
 
 ```
 $ php artisan migrate
 ```
-
-- Put `Menvel\Setting\SettingServiceProvider` to service provider configuration list.
 
 Author
 ---
