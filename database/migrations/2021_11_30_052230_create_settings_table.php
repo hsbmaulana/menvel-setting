@@ -39,7 +39,7 @@ class CreateSettingsTable extends Migration
 
             $table->char('key', 255);
 
-            $table->text('value');
+            $table->text('value')->nullable(true);
             $table->unsignedBigInteger($key);
 
             $table->timestamp('updated_at')->nullable(true);
