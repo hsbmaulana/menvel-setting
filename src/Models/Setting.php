@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
+    const CREATED_AT = null;
     const UPDATED_AT = 'updated_at';
 
     /**
