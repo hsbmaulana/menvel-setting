@@ -2,6 +2,7 @@
 
 namespace Menvel\Setting\Models;
 
+use Menvel\Setting\Scopes\StrictScope;
 use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
@@ -32,4 +33,14 @@ class Setting extends Model
      * @var array
      */
     protected $hidden = [];
+
+    /**
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new StrictScope());
+    }
 }
