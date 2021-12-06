@@ -6,6 +6,7 @@ use Error;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Menvel\Setting\Models\Setting;
+use Menvel\Setting\Scopes\StrictScope;
 use Menvel\Setting\Events\Keying;
 use Menvel\Setting\Events\Keyed;
 use Menvel\Repository\AbstractRepository;
@@ -39,7 +40,7 @@ class SettingRepository extends AbstractRepository implements ISettingRepository
 
         try {
 
-            $content = $user->sets()->updateOrCreate([ 'key' => $identifier, ], [ 'value' => $data['value'], ]);
+            $content = $user->sets()->withoutGlobalScope(StrictScope::class)->updateOrCreate([ 'key' => $identifier, ], [ 'value' => $data['value'], ]);
 
             DB::commit();
 
